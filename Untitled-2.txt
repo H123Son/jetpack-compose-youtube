@@ -1,0 +1,22 @@
+//constructor of the JSONObject class  
+JSONObject obj = new JSONObject(  
+"{" +  
+"Employee ID: 092789," +  
+"Employee Name: Helen Mirren," +  
+"Age: 27, " +  
+"Designation: Assistant Manager," +  
+"City: Florida," +  
+"Salary: 67000.00, " +  
+"Experience: 26 " +  
+"}"  
+);  
+//getting values form the JSONObject  
+System.out.println("Employee ID: "+obj.getInt("Employee ID"));   
+System.out.println("Employee Name: "+obj.getString("Employee Name"));  
+System.out.println("Age: "+obj.getInt("Age"));   
+System.out.println("Designation: "+obj.getString("Designation"));   
+System.out.println("City: "+obj.getString("City"));  
+System.out.println("Salary: "+obj.getDouble("Salary"));   
+System.out.println("Experience: "+obj.getInt("Experience") +" Months");   
+}  
+}  

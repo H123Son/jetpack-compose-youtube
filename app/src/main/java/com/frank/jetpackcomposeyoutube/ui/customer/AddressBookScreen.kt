@@ -29,7 +29,7 @@ data class Address(
     val id: Int = 0,
     val street: String = "",
     val city: String = ""
-): Parcelable {
+) : Parcelable {
 
     override fun toString(): String {
         return adapter().toJson(this)
@@ -44,10 +44,10 @@ data class Address(
     }
 }
 
-class AddressNavType: NavType<Address>(isNullableAllowed = true) {
+class AddressNavType : NavType<Address>(isNullableAllowed = true) {
 
     override fun get(bundle: Bundle, key: String): Address? {
-        return bundle.getParcelable<Address>(key)
+        return bundle.getParcelable(key)
     }
 
     override fun parseValue(value: String): Address {
@@ -75,9 +75,7 @@ object AddressBookNavigation {
     fun fromNav(navBackStackEntry: NavBackStackEntry): Address? {
         return navBackStackEntry.arguments?.getParcelable(addressArg)
     }
-
 }
-
 
 @Composable
 fun AddressBookScreen(addresses: List<Address?>, onBack: () -> Unit) {
@@ -101,7 +99,6 @@ fun AddressBookScreen(addresses: List<Address?>, onBack: () -> Unit) {
                 Text(text = address.toString())
             }
         }
-
     }
 
     BackHandler() {
